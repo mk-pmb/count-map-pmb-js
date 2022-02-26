@@ -16,25 +16,47 @@ API
 
 This module exports one constructor:
 
-### CountMapPmb(..args)
+### CountMapPmb(...args)
 
 Which works the same as the constructor exported from the original
 [`count-map` module](https://github.com/czycha/count-map),
 except the objects created have some additional methods:
 
 
-### .rangeFilter(min, max) | .rangeFilter(ranges)
+
+### .toDict()
+
+Return the entries as a plain object.
+Useful for converting the counts to JSON.
+
+
+
+### .filter(decide)
+
+Make a partial copy with only entries for which function `decide`
+invoked with arguments `(val, key, map)` returns a true-y value.
+
+
+
+### .rangeFilter(min, max)
 
 Return a CountMapPmb with only the entries whose count is at least `min`
-and at most `max`. If one or both limit is `null` or `undefined`,
-it is ignored.
+and at most `max`.
+
+* If `min` is `null` or `undefined`, it is treated as negative infinity.
+* If `max` is `null` or `undefined`, it is treated as positive infinity.
 
 * Example: `.rangeFilter(2)` implies `max = undefined` and thus will report
   all entries that appeared at least twice.
 
-Multiple acceptable `ranges` can be given as an array of `[min, max]` pairs.
 
-* Example: `.rangeFilter([ [null, 1], [3, null] ])` will report
+
+### .rangesFilter(ranges)
+
+Multiple acceptable `ranges` can be given as an array of `[min, max]` pairs.
+Reports entries that match at least one range.
+
+* Example: `.rangesFilter([ [null, 1], [3, null] ])` will report
   all entries except those who appeared exactly twice.
 
 
