@@ -1,0 +1,41 @@
+{ "name": "count-map-pmb",
+  "version": "0.0.1",
+  "description": "Extended version of the `count-map` module, providing range filter and easy conversions.",
+  "keywords": [
+    "count",
+    "filter",
+    "map",
+    "range",
+    "unique"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/count-map-pmb-js/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/count-map-pmb-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/count-map-pmb-js/issues"
+  },
+  "contributors": [],
+
+  "private": false, "license": "ISC",
+
+  "main": "cmx.mjs",
+  "scripts": { "test": "elp && nodemjs test/all.mjs" },
+  "directories": { "test": "test" },
+  "eslintConfig": { "extends": "nodejs-pmb" },
+
+  "dependencies": {
+    "count-map": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint-config-nodejs-pmb": "^0.2.5",
+    "eslint-pretty-pmb": "^1.0.2",
+    "nodemjs": "^0.1.9"
+  },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
