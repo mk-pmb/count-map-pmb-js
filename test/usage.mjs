@@ -50,6 +50,8 @@ const rangesNotTwice = [
 eq(sandwich.rangesFilter(rangesNotTwice).toDict(),
   { bun: 1, ham: 1, salad: 1, tomato: 3 });
 
+eq((new CountMapPmb()).toDict(), {});
+eq((new CountMapPmb()).toDict({ empty: false }), false);
 
 
 

@@ -39,7 +39,15 @@ Object.assign(CF, {
 Object.assign(PT, {
 
   clone() { return Object.assign(new CF(), protoClone.call(this)); },
-  toDict() { return Object.fromEntries(this.entries()); },
+
+  toDict(opt) {
+    const dict = Object.fromEntries(this.entries());
+    if (!opt) { return dict; }
+    if (opt.empty !== undefined) {
+      if (!Object.keys(dict).length) { return opt.empty; }
+    }
+    return dict;
+  },
 
   filter(decide) {
     const copy = this.clone();

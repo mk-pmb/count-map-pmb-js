@@ -24,10 +24,15 @@ except the objects created have some additional methods:
 
 
 
-### .toDict()
+### .toDict([opt])
 
 Return the entries as a plain object.
 Useful for converting the counts to JSON.
+
+`opt` is an optional options object that supports these optional keys:
+
+* `empty`: If set to something other than `undefined`, and the result would
+  be empty, instead return this value.
 
 
 
